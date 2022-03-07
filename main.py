@@ -20,6 +20,7 @@ def run():
         ship.ship_position()
         control.screen_update(bg_color, screen, ship, aliens, bullets)
         control.bullets_manage(bullets)
+        control.update_aliens(aliens)
 
 
 run()

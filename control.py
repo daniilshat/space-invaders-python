@@ -46,6 +46,10 @@ def bullets_manage(bullets):
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
 
+def update_aliens(aliens):
+    # update alien's position
+    aliens.update()
+
 def generate_aliens(screen, aliens):
     # generate aliens
     alien = Alien(screen)
