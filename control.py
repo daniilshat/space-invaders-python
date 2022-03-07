@@ -1,7 +1,10 @@
 import pygame
 import sys
+from bullet import Bullet
 
-def events(ship):
+from bullet import Bullet
+
+def events(screen, ship, bullets):
     # Handling Game Events
 
     # close game window
@@ -16,6 +19,10 @@ def events(ship):
                 # movement to the left
                 elif event.key == pygame.K_a:
                     ship.mleft = True
+                # fire 
+                elif event.key == pygame.K_SPACE:
+                    new_bullet = Bullet(screen, ship)
+                    bullets.add(new_bullet)
             elif event.type == pygame.KEYUP:
                 # movement to the right
                 if event.key == pygame.K_d:
@@ -23,3 +30,17 @@ def events(ship):
                 # movement to the left
                 elif event.key == pygame.K_a:
                     ship.mleft = False
+
+def screen_update(bg_color, screen, ship, bullets):
+    screen.fill(bg_color)
+    for bullet in bullets.sprites():
+        bullet.bullet_render()
+    ship.render()
+    pygame.display.flip()
+
+def bullets_manage(bullets):
+    # delete old bullets and manage all bullets
+    bullets.update()
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)

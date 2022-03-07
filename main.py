@@ -2,6 +2,7 @@ from tkinter import S
 import pygame
 from ship import Ship
 import control
+from pygame.sprite import Group
 
 
 def run():
@@ -10,13 +11,13 @@ def run():
     pygame.display.set_caption("space invaders")
     bg_color = (14, 21, 37)
     ship = Ship(screen)
+    bullets = Group()
 
     while True:
-        control.events(ship)
+        control.events(screen, ship, bullets)
         ship.ship_position()
-        screen.fill(bg_color)
-        ship.render()
-        pygame.display.flip()
+        control.screen_update(bg_color, screen, ship, bullets)
+        control.bullets_manage(bullets)
 
 
 run()
