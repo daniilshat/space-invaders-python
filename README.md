@@ -6,9 +6,10 @@ Python Space Invaiders game with Pygame
 ### Todo:
 - [ ] Start screen   
 - [x] Spaceship
-- [ ] Control
+- [x] Control
 - [ ] Bullet 
 - [ ] Aliens
 - [ ] Game hood
 - [ ] Game logic
+- [ ] Sound and Music
 - [ ] Extra level
