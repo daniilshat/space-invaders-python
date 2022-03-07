@@ -7,7 +7,7 @@ Python Space Invaiders game with Pygame
 - [ ] Start screen   
 - [x] Spaceship
 - [x] Control
-- [ ] Bullet 
+- [x] Bullet 
 - [ ] Aliens
 - [ ] Game hood
 - [ ] Game logic
