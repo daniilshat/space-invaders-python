@@ -6,7 +6,7 @@ class Bullet(pygame.sprite.Sprite):
         # bullet initialization with ship
         super(Bullet, self).__init__()
         self.screen = screen
-        self.rect = pygame.Rect(0, 0, 2, 12)
+        self.rect = pygame.Rect(0, 0, 4, 12)
         self.color = 255, 99, 71
         self.speed = 1.5
         self.rect.centerx = ship.rect.centerx
